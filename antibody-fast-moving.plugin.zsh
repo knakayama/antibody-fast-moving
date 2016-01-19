@@ -17,7 +17,7 @@ EOT
   return 1
   fi
 
-  cd $(ls -1d $ANTIBODY_HOME/* | peco)
+  cd $(find "$ANTIBODY_HOME" -type d -maxdepth 1 -print | peco)
   zle accept-line
   zle -R -c
 }
